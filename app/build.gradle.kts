@@ -49,4 +49,10 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.activity:activity-ktx:1.8.2")
+
+
+    //LiveData Test
+    implementation("androidx.arch.core:core-testing:2.2.0")
+    //Kotlin Test
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.9.22")
 }
