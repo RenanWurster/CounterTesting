@@ -5,10 +5,16 @@ import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class MainViewModelTest {
+/**
+ * In a unit test, only one class can be tested, in this example the class MainViewModel()
+ */
 
+class MainViewModelTest {
+    //System under test (sut) or fixture. (To describe the name of the class being tested in a unit test)
     private val sut = MainViewModel()
 
+
+    //Rule to ensure that LiveData updates are instantly executed in unit tests.
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
@@ -19,7 +25,8 @@ class MainViewModelTest {
 
         assertEquals(expected, result)
     }
-//In tests (and only in tests), you can use method names with spaces enclosed in backticks. (Kotlin convention)
+
+    //In tests (and only in tests), you can use method names with spaces enclosed in backticks. (Kotlin convention)
     @Test
     fun `given initial state, when add is invoked then the state count is 1`() {
         //Given
@@ -41,10 +48,6 @@ class MainViewModelTest {
         repeat(10) {
             sut.add()
         }
-
-        /*for (i in 0 until 10) {
-            sut.add()
-        }*/
 
         //Then
         assertEquals(expected, sut.state.value)
