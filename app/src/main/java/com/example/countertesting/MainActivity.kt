@@ -3,7 +3,6 @@ package com.example.countertesting
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import com.example.countertesting.databinding.ActivityMainBinding
 
@@ -11,8 +10,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel : MainViewModel by viewModels()
-
-    private val TAG = "Log"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnSubCounter.setOnClickListener {
             viewModel.sub()
         }
-        Log.i(TAG, "onCreate gestartet!")
     }
 
 }
